@@ -5,19 +5,43 @@ void main() {
 }
 
 class SampleApp extends StatelessWidget {
+
+
+  //Apply Padding to any View
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
     return new MaterialApp(
-      //Selects the COlor of theme of the App
-      theme: new ThemeData(
-          primarySwatch: Colors.lightGreen
+      home: new Scaffold(
+        appBar: new AppBar(
+          title: new Text("Sample App"),
+        ),
+        body: new Center(
+          child: new MaterialButton(
+            onPressed: () {},
+            child: new Text("Hello"),
+            padding: new EdgeInsets.only(left: 100.0, right: 10.0),
+          ),
+        ),
       ),
-      home: new SamplePageApp(),
     );
+  }
 
 
-    //Return a Simple App with textView in Center
-    //    return new MaterialApp(
+//Text View in the center of the app and behaviour changes on floating click
+//  @override
+//  Widget build(BuildContext context) {
+//    return new MaterialApp(
+//      //Selects the COlor of theme of the App
+//      theme: new ThemeData(
+//          primarySwatch: Colors.lightGreen
+//      ),
+//      home: new SamplePageApp(),
+//    );
+
+
+//Return a Simple App with textView in Center
+//    return new MaterialApp(
 //      home: new Scaffold(
 //        appBar: new AppBar(
 //          title: new Text("My APp Title"),
@@ -26,7 +50,7 @@ class SampleApp extends StatelessWidget {
 //        body: new Text("Kamran"),
 //      ),
 //    );
-  }
+//  }
 }
 
 class SamplePageApp extends StatefulWidget {
