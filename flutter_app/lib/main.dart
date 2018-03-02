@@ -5,34 +5,43 @@ void main() {
 }
 
 class SampleApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: 'Sample App',
+      //Selects the COlor of theme of the App
       theme: new ThemeData(
-        primarySwatch: Colors.blue,
+          primarySwatch: Colors.lightGreen
       ),
-      home: new SampleAppPage(),
+      home: new SamplePageApp(),
     );
+
+
+    //Return a Simple App with textView in Center
+    //    return new MaterialApp(
+//      home: new Scaffold(
+//        appBar: new AppBar(
+//          title: new Text("My APp Title"),
+//          centerTitle: true,
+//        ),
+//        body: new Text("Kamran"),
+//      ),
+//    );
   }
 }
 
-class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key key}) : super(key: key);
+class SamplePageApp extends StatefulWidget {
 
   @override
-  _SampleAppPageState createState() => new _SampleAppPageState();
+  _SamplePageApp createState() => new _SamplePageApp();
 }
 
-class _SampleAppPageState extends State<SampleAppPage> {
-  // Default placeholder text
-  String textToShow = "I Like Flutter";
+class _SamplePageApp extends State<SamplePageApp> {
+
+  String textToChange = "I Like Flutter!";
 
   void _updateText() {
     setState(() {
-      // update the text
-      textToShow = "Flutter is Awesome!";
+      textToChange = "I Love Flutter";
     });
   }
 
@@ -40,14 +49,15 @@ class _SampleAppPageState extends State<SampleAppPage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("Sample App"),
+        title: new Text(textToChange),
       ),
-      body: new Center(child: new Text(textToShow)),
-      floatingActionButton: new FloatingActionButton(
-        onPressed: _updateText,
-        tooltip: 'Update Text',
-        child: new Icon(Icons.update),
-      ),
+      body: new Center(
+        child: new Text(textToChange),
+      ), floatingActionButton: new FloatingActionButton(
+      onPressed: _updateText,
+      tooltip: "Kamran",
+      child: new Icon(Icons.update),
+    ),
     );
   }
 }
